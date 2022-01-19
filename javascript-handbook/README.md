@@ -83,3 +83,62 @@ console.log(Object.keys(person)) // It returns the object values
 
 > Functions and parameters
 
+```javascript
+text = "Hi!"
+// To declare functions you can do:
+const print = text => {
+    console.log(text)
+}
+// or
+const print = text => console.log(text)
+// etc...
+// To call functions you can do:
+print() // You can pass parameters inside the parenthesis
+```
+
+
+> Spread Operator 
+```javascript
+const names = ["Peter", "James", "and John ", "in a boat"]
+const namesCopy = [...names]
+namesCopy[0] = 'Mark' // Using spread operator this change cannot affect the original array
+console.log(names) // [ 'Peter', 'James', 'and John ', 'in a boat' ]
+console.log(namesCopy) // [ 'Mark', 'James', 'and John ', 'in a boat' ]
+```
+[+about in arrays](https://www.educative.io/edpresso/what-is-the-spread-operator-in-javascript)
+```javascript
+let part1 = { name: 'Joao', age: 22 }
+let part2 = { age: 19 }
+
+let pessoa = { ...part1, ...part2 };
+console.log(pessoa) // { name: 'Joao', age: 19 }
+```
+[+about in objects](https://www.javascripttutorial.net/es-next/javascript-object-spread/)
+
+#### In Rest parameters
+
+```javascript
+function join(...strings) {
+    var initialString = "";
+    for (let str of strings) {
+        initialString += str
+    }
+
+    return console.log(initialString);
+}
+
+join(['House','of','brothers']) // House,of,brothers
+```
+
+> Asynchronicity
+
+Asynchronicity in javascript exists when a process that takes a "long time" to be executed and other processes want to execute but the previous process doesn't finish. In javascript, the processes unfinished don't block the other process executions.
+
+In the file [script.js](script.js) we have an example.
+1. We do one request to _Github API_ and this action takes time and doesn't is instant
+2. We use await to wait for the request to finish so that the next line be executed
+3. We handle with the result that will be a _promise_ with _then_.
+4. We print this result that was processed.
+
+**Obs:** If the await don't be used, the result printed will be _undefined_ because that value yet doesn't exist.
+# *For a while is that!...*
