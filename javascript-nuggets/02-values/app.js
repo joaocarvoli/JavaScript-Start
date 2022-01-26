@@ -28,6 +28,9 @@ const menu = [
 const categories = [...new Set(menu.map((item) => item.category))] // It prints the same result of above code
 //const categories = new Set(menu.map((item) => item.category)) // applying the function that shows only the unique values
 console.log(categories)
+/*
+[ 'breakfast', 'lunch', 'dinner' ]
+*/
 
 const result2 = document.querySelector('.result')
 result2.innerHTML = categories.map((category) => {
